@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tin tức - Thế giới điện thoại</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/topnav.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/taikhoan.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/tintuc.css') }}">
+	<script src="{{ url_for('static', filename='js/dungchung.js') }}"></script>
+    <script>
+        window.onload = function () {
+            khoiTao();
+            // thêm tags (từ khóa) vào khung tìm kiếm
+            var tags = ["Samsung", "iPhone", "Huawei", "Oppo", "Mobi"];
+            for (var t of tags) addTags(t, "index.html?search=" + t); // Giữ nguyên "index.html", cân nhắc dùng url_for('route_name') sau
+        }
+    </script>
+
+</head>
+
+<body>
+    <script> addTopNav();</script>
+
+    <section style="min-height: 85vh">
+        <script> addHeader(); </script>
+
+        <div class="body-tintuc">
+            <div class="tintuc-info">
+                <a href="https://taichinh247.vn/smartphone-viet-nam-doi-chiu-trong-quy-i-2025/" target="_blank">
+                    <img src="{{ url_for('static', filename='img/tintuc/tintuc1.png') }}">
+                    <h2>Thị trường smartphone Việt Nam đổi chiều trong quý I/2025</h2>
+                </a>
+                <br/>
+                <h5>Doanh ngiệp &emsp;4/05/2025 (tin về Quý 1/2025)</h5>
+            </div>
+            <div class="tintuc-info">
+                <a href="https://cafebiz.vn/mat-ngoi-dau-o-thi-truong-viet-nam-smartphone-samsung-yeu-the-176240813085152195.chn" target="_blank">
+                    <img src="{{ url_for('static', filename='img/tintuc/tintuc2.png') }}">
+                    <h2>Samsung giảm thị phần tại Việt Nam, Apple và loạt hãng Trung Quốc vươn lên quý 1/2025</h2>
+                </a>
+                <br/>
+                <h5>Báo Lao Động &emsp; 05/04/2025</h5>
+            </div>
+            <div class="tintuc-info">
+                <a href="https://www.xtmobile.vn/xu-huong-smartphone-2025" target="_blank">
+                    <img src="{{ url_for('static', filename='img/tintuc/tintuc3.png') }}">
+                    <h2>Xu hướng smartphone 2025: Những yếu tố đáng được mong đợi</h2>
+                </a>
+                <br/>
+                <h5>XTmobile &emsp; 12/04/2025</h5>
+            </div>
+            <div class="tintuc-info">
+                <a href="https://vnexpress.net/sieu-mong-xu-huong-thi-truong-smartphone-2025-4845403.html" target="_blank">
+                    <img src="{{ url_for('static', filename='img/tintuc/tintuc4.png') }}">
+                    <h2>Siêu mỏng - xu hướng thị trường smartphone 2025</h2>
+                </a>
+                <br/>
+                <h5>VnExpress &emsp; 14/02/2025</h5>
+            </div>
+            <div class="tintuc-info" style="border-bottom: 0;">
+                <a href="https://news.zing.vn/nhung-tieu-chi-ban-khong-nen-bo-qua-khi-mua-smartphone-2018-post894509.html" target="_blank">
+                    <img src="{{ url_for('static', filename='img/tintuc/tintuc5.png') }}" height="148px" width="224px;">
+                    <h2>Những tiêu chí bạn không nên bỏ qua khi mua smartphone 202525</h2>
+                </a>
+                <br/>
+                <h5>Zing &emsp; 9 giờ</h5>
+            </div> 
+
+        </div>
+
+    </section>
+
+    <script> addContainTaiKhoan(); </script>
+
+    <div class="footer">
+        <script>addFooter();</script>
+        
+    </div>
+
+    <i class="fa fa-arrow-up" id="goto-top-page" onclick="gotoTop()"></i>
+
+</body>
+
+</html>

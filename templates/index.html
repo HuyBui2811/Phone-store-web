@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<title>Smartphone Store</title>
+	<link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}" />
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+	 crossorigin="anonymous">
+
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/vendor/owlcarousel/owl.carousel.min.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/vendor/owlcarousel/owl.theme.default.min.css') }}">
+	<script src="{{ url_for('static', filename='js/Jquery/Jquery.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/owlcarousel/owl.carousel.min.js') }}"></script>
+
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/topnav.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/banner.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/taikhoan.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/trangchu.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/home_products.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/pagination_phantrang.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/ai-chat.css') }}">
+	<script src="{{ url_for('static', filename='js/classes.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/dungchung.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/trangchu.js') }}"></script>
+
+</head>
+
+<body>
+	<script> addTopNav(); </script>
+
+	<section>
+		<script> addHeader(); </script>
+
+		<div class="banner">
+			<div class="owl-carousel owl-theme"></div>
+		</div> <img src="{{ url_for('static', filename='img/banners/blackFriday.gif') }}" alt="" style="width: 100%;">
+
+		<br>
+		<div class="companyMenu group flexContain"></div>
+        <div id="top-products-container"></div>
+	<div class="flexContain">
+    <div class="pricesRangeFilter dropdown">
+        <button class="dropbtn">
+            <i class="fa fa-money dropbtn-main-icon" aria-hidden="true"></i> <span class="dropbtn-text">Giá tiền</span>
+            <i class="fa fa-chevron-down dropbtn-arrow-icon" aria-hidden="true"></i> </button>
+        <div class="dropdown-content">
+            </div>
+    </div>
+
+    <div class="promosFilter dropdown">
+        <button class="dropbtn">
+            <i class="fa fa-tags dropbtn-main-icon" aria-hidden="true"></i> <span class="dropbtn-text">Khuyến mãi</span>
+            <i class="fa fa-chevron-down dropbtn-arrow-icon" aria-hidden="true"></i> </button>
+        <div class="dropdown-content">
+            </div>
+    </div>
+
+    <div class="starFilter dropdown">
+        <button class="dropbtn">
+            <i class="fa fa-star dropbtn-main-icon" aria-hidden="true"></i> <span class="dropbtn-text">Số lượng sao</span>
+            <i class="fa fa-chevron-down dropbtn-arrow-icon" aria-hidden="true"></i> </button>
+        <div class="dropdown-content">
+            </div>
+    </div>
+
+    <div class="sortFilter dropdown">
+        <button class="dropbtn">
+            <i class="fa fa-sort dropbtn-main-icon" aria-hidden="true"></i> <span class="dropbtn-text">Sắp xếp</span>
+            <i class="fa fa-chevron-down dropbtn-arrow-icon" aria-hidden="true"></i> </button>
+        <div class="dropdown-content">
+            </div>
+    </div>
+</div>
+        <div class="choosedFilter flexContain">
+			<a id="deleteAllFilter" style="display: none;">
+				<h3>Xóa bộ lọc</h3>
+			</a>
+		</div> <hr>
+
+		<div class="contain-products" style="display:none"> 
+			<div class="filterName">
+				<input type="text" placeholder="Lọc trong trang theo tên..." onkeyup="filterProductsName(this)">
+			</div> <ul id="products" class="homeproduct group flexContain">
+				<div id="khongCoSanPham">
+					<i class="fa fa-times-circle"></i>
+					Không có sản phẩm nào
+				</div> </ul><div class="pagination"></div>
+		</div>
+
+		<div class="contain-khungSanPham" ></div>
+
+	 </section> <div id="ai-chat-widget">
+        <button id="chat-toggle-button" onclick="toggleAIChat()">
+            <i class="fa fa-comments"></i> Trợ lý AI
+        </button>
+        <div id="chat-window" class="hidden"> <div id="chat-header">
+                <span>Trợ lý AI</span>
+                <button id="chat-close-button" onclick="toggleAIChat()">×</button>
+            </div>
+            <div id="chat-messages">
+                <div class="message ai-message">Xin chào! Tôi có thể giúp gì cho bạn?</div>
+            </div>
+            <div id="chat-input-container">
+                <input type="text" id="chat-input" placeholder="Nhập tin nhắn...">
+                <button id="chat-send-button" onclick="sendChatMessage()">Gửi</button>
+            </div>
+        </div>
+    </div>
+
+	<script>
+		addContainTaiKhoan(); addPlc();
+	</script>
+
+	<div class="footer"><script>addFooter();</script></div>
+
+	<i class="fa fa-arrow-up" id="goto-top-page" onclick="gotoTop()"></i>
+	<script src="{{ url_for('static', filename='js/ai-chat.js') }}"></script>
+</body>
+
+</html>

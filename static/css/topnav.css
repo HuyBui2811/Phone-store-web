@@ -1,0 +1,102 @@
+/* Top Navigation */
+.top-nav {
+    display: flex; /* Sử dụng flexbox để căn chỉnh */
+    justify-content: center; /* Căn giữa */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    background: linear-gradient(90deg, #f9d423 0%, #ff4e50 100%); /* Màu nền tối */
+    width: 100%;
+    padding: 18px 20px 10px 20px; /* Padding cho thoáng */
+    border-bottom: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* Bóng đổ */
+}
+
+/* Căn giữa cho các phần tử trong topnav */
+.topnav-center {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+/* Đoạn mã mới được thêm vào theo yêu cầu */
+.topnav-center-vertical {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+}
+/* ======= End Đoạn mã mới ======= */
+
+/* Social Icon Container - Căn trái hoàn toàn */
+.social-top-nav {
+    display: flex; /* Sử dụng flex */
+    gap: 18px; /* Khoảng cách giữa các icon */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    margin-bottom: 2px;
+}
+
+.social-top-nav a {
+    padding: 4px;
+    font-size: 16px;      /* Giảm kích thước icon */
+    height: 1.8em;        /* Giảm chiều cao vòng tròn */
+    width: 1.8em;         /* Giảm chiều rộng vòng tròn */
+    line-height: 1.8em;   /* Căn giữa icon */
+    color: #fff;
+    background: #222;
+    border-radius: 50%;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hiệu ứng hover cho icon */
+.social-top-nav a:hover { 
+    color: #fff; 
+    background: #ff4e50;
+    transform: scale(1.1); /* Phóng to nhẹ */
+}
+.fa-facebook:hover { background: #3B5998 !important; }
+.fa-twitter:hover { background: #55ACEE !important; }
+.fa-google:hover { background: #DB4437 !important; }
+.fa-youtube:hover { background: #bb0000 !important; }
+/* ======= End Social Icon ======= */
+/* THÊM ĐOẠN NÀY VÀO */
+/* Quick Link */
+.top-nav-quicklink {
+    display: flex; /* Sử dụng flex */
+    gap: 18px; /* Khoảng cách giữa các link */
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.top-nav-quicklink li {
+    font-size: 1em;
+    color: #c2de5a; /* Màu chữ sáng */
+}
+
+.top-nav-quicklink li a {
+    color: #222; /* Màu chữ */
+    font-weight: 500;
+    font-size: 1.08em;
+    padding: 6px 14px; /* Padding */
+    border-radius: 18px;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+    background: rgba(255,255,255,0.7);
+}
+
+.top-nav-quicklink li a:hover {
+    background: #ff4e50;
+    color: #fff;
+    border-bottom: none; /* Bỏ viền dưới */
+}
+
+.top-nav-quicklink li a:hover i {
+    color: #fff; /* Màu icon hover */
+}
+/* ======= End Quick Link ======= */
+/* ======= End Top Navigation ======= */

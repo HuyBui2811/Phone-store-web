@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Create Product code</title>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+	 crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/home_products.css') }}">
+
+	<script src="{{ url_for('static', filename='js/classes.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/dungchung.js') }}"></script>
+
+	<style>
+		* { 
+			outline: none; 
+			font-family: sans-serif; 
+		}
+		
+		table {
+			padding: 5px 3px;
+			border : 1px solid #333;
+			margin: 10px auto;
+		}
+		td {
+			padding: 5px 3px;
+			border-bottom: 1pt solid #333;
+		}
+		input {
+			padding: 5px 3px;
+			height: 26px;
+			font-size: 20px;
+		}
+		button {
+			border-radius: 10px;
+			margin: 10px auto;
+			font-size: 20px;
+			padding: 10px 5px;
+			border: none;
+			cursor: pointer;
+			background: #487;
+		}
+		button:hover {
+			background: #4a7;
+		}
+		textarea {
+			padding: 5px 3px;
+			font-size: 16px;
+		}
+		.homeproduct li {
+			width: 250px;
+		}
+	</style>
+
+	<script>
+		// Thêm sản phẩm vào trang
+		function addProduct(p, id) {
+			promo = new Promo(p.promo.name, p.promo.value); // class Promo
+			// Class product - đường dẫn hình ảnh p.img cần được xử lý đúng bởi hàm getResult()
+			product = new Product(p.img, p.name, p.price, p.star, p.rateCount, promo); 
+			addToWeb(product, id);
+		}
+		function getResult() {
+			var name = document.getElementById('name').value;
+			var company = document.getElementById('company').value;
+			var img_filename = document.getElementById('img').value; // Đây là tên file ảnh
+			var price = document.getElementById('price').value;
+			var star = document.getElementById('star').value || 0;
+			var rateCount = document.getElementById('rateCount').value || 0;
+			var promoName = document.getElementById('promoName').value;
+			var promoValue = document.getElementById('promoValue').value;
+
+            var final_img_path = img_filename;
+			if(img_filename.indexOf('http') < 0 && img_filename) { // Nếu là tên file và không rỗng
+				// Để JS tạo đường dẫn tương đối cho Flask hiểu, hoặc hàm addToWeb tự xử lý
+                // Cách 1: JS tạo đường dẫn tuyệt đối từ gốc static
+                // final_img_path = "/static/img/products/" + img_filename; 
+                // Cách 2: Giữ nguyên tên file, và hàm addToWeb (hoặc nơi hiển thị) sẽ dùng url_for
+                // Ví dụ: nếu addToWeb tạo thẻ <img src="..."> thì src nên là `{{ url_for('static', filename='img/products/') }}${img_filename}`
+                // Hiện tại, để đơn giản, giữ nguyên tên file, và logic hiển thị (addToWeb) cần biết để thêm /static/img/products/
+                // Hoặc bạn có thể để JS tự thêm /static/ như gợi ý ở trên cùng
+                final_img_path = "/static/img/products/" + img_filename; // Giả sử JS tự thêm /static/
+			}
+            
+return {
+	"name": name,
+	"company": company,
+	"img": final_img_path, // Sử dụng đường dẫn đã xử lý
+	"price": price,
+	"star": star,
+	"rateCount": rateCount,
+	"promo": {
+		"name": promoName,
+		"value": promoValue
+	}
+};
+		}
+
+		function saveToDatabase() {
+			var r = getResult();
+			if(!r.name || !r.price) {
+				alert('Chưa nhập tên hoặc giá tiền');
+				return;
+			}
+
+			addProduct(r, 'products');
+			var textarea = document.getElementById('t_a');
+			if(textarea.innerHTML == '')
+				textarea.innerHTML += JSON.stringify(r, null, "\t");
+			else textarea.innerHTML += ',\n'+JSON.stringify(r, null, "\t");
+		}
+
+		function valueChange() {
+			document.getElementById('live').innerHTML = '';
+			addProduct(getResult(), 'live');
+		}
+
+		window.onload = function() {
+			var inp = document.getElementsByTagName('input');
+			for(var i = 0; i < inp.length; i++) {
+				inp[i].onkeyup = valueChange;
+			}
+            var selects = document.getElementsByTagName('select');
+            for(var i = 0; i < selects.length; i++) {
+                selects[i].onchange = valueChange;
+            }
+            valueChange(); // Gọi lần đầu để hiển thị nếu có giá trị mặc định
+		}
+	</script>
+
+</head>
+
+<body>
+	<table>
+		<tr>
+			<td>
+				<table cellpadding="7">
+					<tr>
+						<td>Tên sản phẩm:</td>
+						<td><input id="name" type="text"></td>
+					</tr>
+					<tr>
+						<td>Tên Hãng:</td>
+						<td>
+							<select name="" id="company">
+								<option value="Apple">Apple</option>
+								<option value="Samsung">Samsung</option>
+								<option value="Oppo">Oppo</option>
+								<option value="Nokia">Nokia</option>
+								<option value="Huawei">Huawei</option>
+								<option value="Xiaomi">Xiaomi</option>
+								<option value="Realme">Realme</option>
+								<option value="Vivo">Vivo</option>
+								<option value="Philips">Philips</option>
+								<option value="Mobell">Mobell</option>
+								<option value="Mobiistar">Mobiistar</option>
+								<option value="Itel">Itel</option>
+								<option value="Coolpad">Coolpad</option>
+								<option value="HTC">HTC</option>
+								<option value="Motorola">Motorola</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>Tên file ảnh (trong static/img/products/):</td>
+						<td><input id="img" type="text"></td>
+					</tr>
+					<tr>
+						<td>Giá tiền:</td>
+						<td><input id="price" type="text"></td>
+					</tr>
+					<tr>
+						<td>Đánh giá (mấy sao):</td>
+						<td><input id="star" type="text"></td>
+					</tr>
+					<tr>
+						<td>Số lượt đánh giá:</td>
+						<td><input id="rateCount" type="text"></td>
+					</tr>
+					<tr>
+						<td>Khuyến mãi:</td>
+						<td>
+							<select name="km" id="promoName">
+								<option value="">Không khuyến mãi</option>
+								<option value="tragop">Trả góp</option>
+								<option value="giamgia">Giảm giá</option>
+								<option value="moiramat">Mới ra mắt</option>
+								<option value="giareonline">Giá rẻ online</option>
+							</select>
+
+						</td>
+					</tr>
+					<tr>
+						<td>Giá trị khuyến mãi:</td>
+						<td><input id="promoValue" type="text"></td>
+					</tr>
+				</table>
+			</td>
+
+			<td>
+				<ul class="homeproduct group flexContain" id="live"></ul>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<button onclick="saveToDatabase()">Lưu vào database</button>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<ul class="homeproduct" id="products"></ul>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<p>Kết quả Database:</p>
+				<textarea rows="13" cols="70" id="t_a"></textarea>
+			</td>
+		</tr>
+	</table>
+
+</body>
+
+</html>

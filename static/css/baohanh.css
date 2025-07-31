@@ -1,0 +1,286 @@
+/* === General Page Setup === */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f7f9; /* Light gray background for the page */
+    margin: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff; /* White background for content area */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+}
+
+.page-title { /* Replaces .page-header from previous CSS */
+    text-align: center;
+    color: #2c3e50; /* Dark blue for title */
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #3498db; /* Blue accent border */
+}
+
+.warranty-intro {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.1em;
+    color: #555;
+}
+
+.warranty-intro p {
+    margin-bottom: 10px;
+}
+
+/* === Two Column Layout === */
+.content-wrapper {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 30px;
+}
+
+.main-content {
+    flex: 3; /* Main content takes more space */
+    min-width: 300px; /* Ensure it doesn't get too squeezed */
+}
+
+.sidebar-content {
+    flex: 1;
+    min-width: 280px;
+    background-color: #fdfdfd;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+.sidebar-content h3 {
+    color: #3498db;
+    font-size: 1.4em;
+    margin-top: 0;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #eee;
+}
+.sidebar-content .ct p {
+    font-size: 0.9em;
+    margin-bottom: 8px;
+    color: #444;
+}
+.sidebar-content .ct b {
+    color: #2c3e50;
+}
+.sidebar-content .ct a {
+    color: #3498db;
+    text-decoration: none;
+}
+.sidebar-content .ct a:hover {
+    text-decoration: underline;
+}
+
+.map-container {
+    margin-top: 20px;
+    border-radius: 6px;
+    overflow: hidden; /* To make border-radius work on iframe */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.map-container iframe {
+    display: block; /* Remove extra space below iframe */
+}
+
+
+/* === Section Styling === */
+.service-centers h2,
+.warranty-contact-form-section h2 {
+    font-size: 1.8em;
+    color: #3498db; /* Blue for section titles */
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.service-centers h2 .fa,
+.warranty-contact-form-section h2 .fa,
+.sidebar-content h3 .fa {
+    margin-right: 10px;
+}
+
+/* === Tabs for Service Centers === */
+.tabs {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.tab-button {
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    font-size: 1em;
+    color: #555;
+    margin-right: 5px;
+    border-bottom: 3px solid transparent;
+    transition: color 0.3s, border-bottom-color 0.3s;
+}
+
+.tab-button:hover {
+    color: #3498db;
+}
+
+.tab-button.active {
+    color: #3498db;
+    border-bottom-color: #3498db;
+    font-weight: bold;
+}
+
+/* === Service Center Cards === */
+.list-service-centers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+    gap: 20px;
+}
+
+.service-center-card { /* Replaces .box */
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s ease;
+}
+
+.service-center-card:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.service-center-card h4 {
+    font-size: 1.3em;
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.service-center-card p {
+    font-size: 0.95em;
+    color: #555;
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.service-center-card p .fa {
+    margin-right: 8px;
+    color: #3498db; /* Icon color */
+    width: 15px; /* Ensure icons align nicely */
+    text-align: center;
+}
+.service-center-card .map-link {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+}
+.service-center-card .map-link:hover {
+    text-decoration: underline;
+}
+.service-center-card .map-link .fa {
+    color: inherit; /* Link color for external link icon */
+}
+
+
+/* === Contact Form Styling === */
+.warranty-contact-form-section p {
+    margin-bottom: 20px;
+    font-size: 1em;
+    color: #555;
+}
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #495057;
+    font-size: 0.95em;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form textarea {
+    width: 100%; /* Full width within its container */
+    padding: 12px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    font-size: 1em;
+    color: #495057;
+    box-sizing: border-box; /* Important for 100% width with padding */
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form input[type="tel"]:focus,
+.contact-form textarea:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+    outline: none;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.contact-form .submit-btn {
+    background-color: #3498db;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.contact-form .submit-btn:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+    transform: translateY(-2px);
+}
+
+
+/* === Responsive Adjustments === */
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column; /* Stack main content and sidebar */
+    }
+    .main-content, .sidebar-content {
+        flex: none; /* Reset flex grow */
+        width: 100%;
+    }
+    .page-title {
+        font-size: 2em;
+    }
+    .service-centers h2,
+    .warranty-contact-form-section h2 {
+        font-size: 1.5em;
+    }
+    .list-service-centers {
+        grid-template-columns: 1fr; /* Single column for cards on mobile */
+    }
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    .contact-form input[type="tel"],
+    .contact-form textarea {
+        font-size: 0.95em; /* Slightly smaller font on mobile for inputs */
+    }
+    .contact-form .submit-btn {
+        width: 100%;
+        font-size: 1em;
+    }
+}

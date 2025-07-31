@@ -1,0 +1,89 @@
+/* Thanh % */
+.progress {
+    display: block;
+    position: relative;
+    height: 12px; /* Slightly thicker for better visibility */
+    width: 300px;
+    background-color: #4a5568; /* Darker, modern background */
+    border-radius: 8px; /* Smoother corners */
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.progress:not(:last-child) {
+    margin-bottom: 6px; /* Slightly increased spacing */
+}
+
+.progress:hover {
+    transform: scale(1.02); /* Subtle zoom on hover */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
+}
+
+.progress-bar {
+    position: absolute;
+    height: 100%;
+    left: 0;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.2), transparent); /* Gradient overlay */
+    transition: width 0.6s ease-in-out; /* Smooth width transition */
+    animation: progressFill 1.5s ease-in-out; /* Fill animation on load */
+}
+
+/* Background color classes */
+.bg-info {
+    background: linear-gradient(90deg, #4c51bf, #63b3ed); /* Vibrant blue gradient */
+}
+
+.bg-info:hover {
+    background: linear-gradient(90deg, #667eea, #90cdf4); /* Lighter on hover */
+}
+
+.bg-danger {
+    background: linear-gradient(90deg, #e53e3e, #f56565); /* Red gradient */
+}
+
+.bg-danger:hover {
+    background: linear-gradient(90deg, #f56565, #fc8181); /* Lighter on hover */
+}
+
+.bg-success {
+    background: linear-gradient(90deg, #38a169, #48bb78); /* Green gradient */
+}
+
+.bg-success:hover {
+    background: linear-gradient(90deg, #48bb78, #68d391); /* Lighter on hover */
+}
+
+.bg-warning {
+    background: linear-gradient(90deg, #d69e2e, #ecc94b); /* Yellow gradient */
+}
+
+.bg-warning:hover {
+    background: linear-gradient(90deg, #ecc94b, #f6e05e); /* Lighter on hover */
+}
+
+/* Keyframe Animations */
+@keyframes progressFill {
+    0% {
+        width: 0;
+        opacity: 0.7;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes pulseGlow {
+    0% {
+        box-shadow: 0 0 5px rgba(99, 179, 237, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 15px rgba(99, 179, 237, 0.8);
+    }
+    100% {
+        box-shadow: 0 0 5px rgba(99, 179, 237, 0.5);
+    }
+}

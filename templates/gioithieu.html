@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Giới thiệu - Thế giới điện thoại</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        crossorigin="anonymous">
+        
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/topnav.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/taikhoan.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/gioithieu.css') }}">
+
+	<script src="{{ url_for('static', filename='js/dungchung.js') }}"></script>
+    <script>
+        window.onload = function () {
+            khoiTao();
+            // thêm tags (từ khóa) vào khung tìm kiếm
+            var tags = ["Samsung", "iPhone", "Huawei", "Oppo", "Mobi"];
+            // Giữ nguyên "index.html", cân nhắc dùng url_for('route_name') sau
+            for (var t of tags) addTags(t, "index.html?search=" + t); 
+        }
+    </script>
+
+</head>
+
+<body>
+    <script> addTopNav();</script>
+
+    <section style="min-height: 85vh">
+        <script> addHeader(); </script>
+
+        <div class="page-gt">
+            <h4 class="page-header">
+                Giới thiệu
+            </h4>
+           <div class="page-info">
+    <p>
+        Chào mừng quý khách đến với <strong>Thế giới điện thoại</strong> – điểm đến tin cậy cho những người yêu công nghệ tại Hà Nội! Được khai sinh từ năm 1996, chúng tôi tự hào là một trong những đơn vị tiên phong đặt nền móng cho thị trường phân phối điện thoại di động Thủ đô. Ngay từ những ngày đầu, khát vọng của chúng tôi là mang những sản phẩm công nghệ tiên tiến nhất đến gần hơn với người tiêu dùng Việt.
+    </p>
+    <br />
+    <p>
+        Một cột mốc quan trọng, khẳng định uy tín và vị thế của chúng tôi, là việc chính thức trở thành nhà phân phối ủy quyền cấp cao (Masterdealer) của thương hiệu SamSung vào năm 2000. Sự kiện này không chỉ là minh chứng cho năng lực mà còn là nền tảng vững chắc để chúng tôi tiếp tục mở rộng hợp tác với nhiều thương hiệu hàng đầu khác như Apple (iPhone), Huawei, Oppo, Xiaomi và các dòng sản phẩm di động đa dạng khác, đáp ứng trọn vẹn mọi nhu cầu của quý khách.
+    </p>
+    <br />
+    <p>
+        Với hành trình phát triển không ngừng nghỉ kéo dài hơn hai thập kỷ, <strong>Thế giới điện thoại</strong> đã xây dựng được một di sản dựa trên sự tin cậy, chất lượng sản phẩm và dịch vụ khách hàng vượt trội. Sứ mệnh của chúng tôi không chỉ dừng lại ở việc cung cấp thiết bị di động, mà còn là mang đến giải pháp công nghệ toàn diện, giúp quý khách kết nối, làm việc và giải trí hiệu quả hơn mỗi ngày.
+    </p>
+    <br />
+    <p>
+        <strong>Giá trị cốt lõi của chúng tôi:</strong>
+    </p>
+    <ul>
+        <li><strong>Chất lượng là Danh dự:</strong> Chúng tôi cam kết 100% sản phẩm đều là hàng chính hãng, có nguồn gốc xuất xứ rõ ràng, đi kèm chính sách bảo hành minh bạch và ưu việt, bảo vệ quyền lợi tối đa cho khách hàng.</li>
+        <li><strong>Khách hàng là Trọng tâm:</strong> Mọi hoạt động của chúng tôi đều xoay quanh việc lắng nghe, thấu hiểu và đáp ứng nhu cầu của quý khách. Sự hài lòng của bạn chính là thước đo thành công lớn nhất của chúng tôi.</li>
+        <li><strong>Đội ngũ Chuyên gia:</strong> Nhân viên tại Thế giới điện thoại không chỉ là người bán hàng, mà còn là những nhà tư vấn công nghệ am hiểu sâu sắc. Với sự nhiệt tình, chu đáo và kiến thức chuyên môn vững vàng, đội ngũ của chúng tôi luôn sẵn sàng hỗ trợ quý khách lựa chọn sản phẩm phù hợp nhất, đồng thời giải đáp mọi thắc mắc và cung cấp thông tin hữu ích.</li>
+        <li><strong>Không ngừng Đổi mới:</strong> Chúng tôi liên tục cập nhật những xu hướng công nghệ mới nhất, đa dạng hóa sản phẩm và nâng cao chất lượng dịch vụ để mang đến trải nghiệm mua sắm ngày càng tốt hơn.</li>
+    </ul>
+    <br />
+    <p>
+        Chúng tôi hiểu rằng, để đứng vững và phát triển trong một thị trường đầy cạnh tranh, sự tin yêu và ủng hộ của quý khách hàng là yếu tố then chốt. Chính vì vậy, <strong>Thế giới điện thoại</strong> luôn nỗ lực không ngừng để cải tiến, hoàn thiện, xứng đáng với phương châm: <em>"Thế giới điện thoại – Nơi công nghệ và sự tận tâm hội tụ."</em>
+    </p>
+    <br />
+    <p>
+        Một lần nữa, chúng tôi xin gửi lời tri ân sâu sắc đến tất cả quý khách hàng đã, đang và sẽ đồng hành cùng <strong>Thế giới điện thoại</strong>. Mọi ý kiến đóng góp của quý vị đều vô cùng quý báu, giúp chúng tôi ngày một hoàn thiện hơn. Kính chúc quý khách có những trải nghiệm mua sắm tuyệt vời tại đây!
+    </p>
+</div>
+        </div>
+    </section>
+
+    <script> addContainTaiKhoan(); </script>
+
+    <div class="footer">
+        <script>addFooter();</script>
+        
+    </div>
+
+    <i class="fa fa-arrow-up" id="goto-top-page" onclick="gotoTop()"></i>
+</body>
+
+</html>

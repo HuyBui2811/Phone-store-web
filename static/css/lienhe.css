@@ -1,0 +1,235 @@
+/* === Reset Cơ bản & Kiểu dáng Chung === */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* Font stack hiện đại */
+    line-height: 1.65;
+    color: #495057; /* Màu chữ chính đậm hơn một chút, dễ đọc hơn */
+    background-color: #f8f9fa; /* Màu nền trang nhẹ nhàng hơn */
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    width: 90%;
+    max-width: 1140px; /* Giới hạn độ rộng tối đa phổ biến */
+    margin: 0 auto;
+    padding: 30px 15px; /* Tăng padding dọc */
+}
+
+/* === Phần Header của Trang Liên Hệ === */
+.lienhe-header {
+    font-size: 2.25em; /* Tăng kích thước tiêu đề */
+    font-weight: 600; /* Độ đậm vừa phải */
+    color: #343a40; /* Màu tiêu đề tối, sang trọng */
+    padding-bottom: 15px;
+    margin-bottom: 40px; /* Tăng khoảng cách dưới */
+    text-align: center;
+    border-bottom: 1px solid #e0e0e0; /* Viền dưới mỏng, tinh tế */
+    /* Bỏ background và box-shadow để header trông nhẹ nhàng hơn */
+}
+
+/* === Bố cục chính cho Thông tin & Form === */
+.contact-section { /* Đổi tên class để tránh trùng lặp và rõ nghĩa hơn */
+    background-color: #ffffff;
+    padding: 30px 35px; /* Tăng padding */
+    border-radius: 12px; /* Bo góc nhiều hơn */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07); /* Đổ bóng mềm mại hơn */
+    margin-bottom: 30px;
+}
+
+.contact-section h3 { /* Kiểu chung cho tiêu đề các mục nhỏ */
+    font-size: 1.6em;
+    font-weight: 500;
+    color: #007bff; /* Màu xanh dương làm điểm nhấn (có thể đổi thành màu thương hiệu của bạn) */
+    margin-top: 0;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+/* --- Phần Thông tin chung (Địa chỉ, Map) --- */
+/* .lienhe-info đã được thay bằng .contact-section ở trên */
+
+.info-columns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px; /* Khoảng cách rõ ràng hơn */
+}
+
+.info-left, .info-right {
+    flex: 1;
+    min-width: 280px;
+}
+
+.info-left p {
+    margin-bottom: 12px;
+    font-size: 1em; /* Kích thước font chuẩn */
+    color: #555e68;
+}
+
+.info-left strong {
+    color: #343a40;
+    font-weight: 500;
+}
+
+.info-right iframe {
+    width: 100%;
+    height: 350px; /* Tăng chiều cao map */
+    border: none;
+    border-radius: 8px; /* Bo góc cho map */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* --- Phần Form liên hệ & Thông tin Nhóm --- */
+/* .form-details-wrapper không cần thiết nếu mỗi section là một .contact-section */
+
+/* --- Form gửi thông tin --- */
+/* .guithongtin đã được thay bằng .contact-section ở trên */
+
+.guithongtin table { /* Giả sử form vẫn dùng table, nếu không thì bỏ table và dùng div */
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.guithongtin table td {
+    padding: 10px 0;
+}
+
+.guithongtin label {
+    display: block;
+    margin-bottom: 8px; /* Tăng khoảng cách với input */
+    font-weight: 500; /* Đậm vừa phải */
+    color: #343a40;
+    font-size: 0.95em;
+}
+
+.guithongtin input[type="text"],
+.guithongtin input[type="email"],
+.guithongtin textarea {
+    width: calc(100% - 24px); /* 100% trừ padding ngang của input */
+    padding: 12px; /* Padding đồng đều */
+    border: 1px solid #ced4da; /* Viền nhạt hơn */
+    border-radius: 6px; /* Bo góc nhẹ cho input */
+    font-size: 1em;
+    color: #495057;
+    background-color: #fff; /* Nền trắng */
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.guithongtin input[type="text"]:focus,
+.guithongtin input[type="email"]:focus,
+.guithongtin textarea:focus {
+    border-color: #007bff; /* Màu nhấn khi focus */
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Hiệu ứng focus giống Bootstrap */
+    outline: none;
+}
+
+.guithongtin textarea {
+    min-height: 120px; /* Chiều cao tối thiểu cho textarea */
+    resize: vertical; /* Cho phép thay đổi kích thước theo chiều dọc */
+}
+
+.guithongtin button {
+    padding: 12px 30px; /* Tăng padding cho button */
+    cursor: pointer;
+    background-color: #007bff; /* Màu xanh dương chủ đạo */
+    color: white;
+    border: none;
+    border-radius: 6px; /* Bo góc cho button */
+    font-size: 1em;
+    font-weight: 500;
+    transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+    display: inline-block;
+    margin-top: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.guithongtin button:hover {
+    background-color: #0056b3; /* Màu đậm hơn khi hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.guithongtin button:active {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+
+/* --- Thông tin nhóm --- */
+/* .thongtinnhom đã được thay bằng .contact-section ở trên */
+
+.thongtinnhom table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    border: 1px solid #e0e0e0; /* Viền ngoài cho bảng */
+    border-radius: 8px; /* Bo góc cho bảng */
+    overflow: hidden; /* Để bo góc có tác dụng với background hàng */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.thongtinnhom table th,
+.thongtinnhom table td {
+    border-bottom: 1px solid #e0e0e0; /* Chỉ viền dưới */
+    padding: 12px 15px; /* Tăng padding */
+    text-align: left;
+    font-size: 0.95em;
+}
+
+.thongtinnhom table th {
+    background-color: #f8f9fa; /* Nền rất nhẹ cho header */
+    color: #343a40;
+    font-weight: 500;
+    border-bottom-width: 2px; /* Viền dưới header đậm hơn */
+    border-color: #ced4da;
+}
+
+.thongtinnhom tr:last-child td {
+    border-bottom: none; /* Bỏ viền cho hàng cuối cùng */
+}
+
+.thongtinnhom tr:nth-of-type(even) {
+    background-color: #fcfcfd; /* Màu xen kẽ rất nhẹ */
+}
+.thongtinnhom tr:hover {
+    background-color: #e9ecef; /* Màu hover nhẹ nhàng */
+}
+
+
+/* === Responsive Design === */
+@media (max-width: 992px) { /* Tablet và nhỏ hơn */
+    .info-columns {
+        gap: 20px;
+    }
+    .contact-section {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 768px) { /* Mobile */
+    .container {
+        padding: 20px 10px;
+    }
+    .lienhe-header {
+        font-size: 1.8em;
+        margin-bottom: 30px;
+    }
+    .contact-section h3 {
+        font-size: 1.4em;
+    }
+    .info-columns, .form-details-wrapper { /* .form-details-wrapper không còn dùng nếu mỗi phần là contact-section */
+        flex-direction: column;
+    }
+    .guithongtin input[type="text"],
+    .guithongtin input[type="email"],
+    .guithongtin textarea {
+        width: calc(100% - 20px); /* Điều chỉnh padding */
+        padding: 10px;
+    }
+    .guithongtin button {
+        width: 100%; /* Button chiếm toàn bộ chiều rộng trên mobile */
+        padding: 12px;
+    }
+}

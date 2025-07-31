@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Không tìm thấy trang - Lỗi 404</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(120deg, #e3f2fd 0%, #f8fafc 100%);
+            color: #22223b;
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            max-width: 420px;
+            margin: 0 auto;
+            padding: 38px 28px 32px 28px;
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(100,181,246,0.13);
+            text-align: center;
+            animation: fadeIn 0.7s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        .error-icon {
+            font-size: 4.5rem;
+            color: #64b5f6;
+            margin-bottom: 10px;
+            display: inline-block;
+            animation: shake 1.2s infinite alternate;
+        }
+        @keyframes shake {
+            0% { transform: rotate(-6deg);}
+            100% { transform: rotate(6deg);}
+        }
+        h1 {
+            color: #dc3545;
+            font-size: 2.6em;
+            margin-bottom: 10px;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+        .subtitle {
+            color: #64b5f6;
+            font-size: 1.2em;
+            margin-bottom: 18px;
+            font-weight: 600;
+        }
+        p {
+            font-size: 1.08em;
+            margin-bottom: 18px;
+            color: #444;
+        }
+        a {
+            color: #fff;
+            background: linear-gradient(90deg, #64b5f6 60%, #b3e5fc 100%);
+            text-decoration: none;
+            padding: 12px 32px;
+            border-radius: 7px;
+            font-weight: 600;
+            font-size: 1.08em;
+            border: none;
+            box-shadow: 0 2px 8px rgba(100,181,246,0.08);
+            transition: background 0.2s, color 0.2s, transform 0.2s;
+            display: inline-block;
+        }
+        a:hover {
+            background: linear-gradient(90deg, #b3e5fc 60%, #64b5f6 100%);
+            color: #22223b;
+            transform: translateY(-2px) scale(1.04);
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 18px 4vw 22px 4vw;
+            }
+            h1 {
+                font-size: 2em;
+            }
+            .error-icon {
+                font-size: 3.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="error-icon">😕</div>
+        <h1>404</h1>
+        <div class="subtitle">Không tìm thấy trang</div>
+        <p>Rất tiếc, trang bạn đang tìm kiếm không tồn tại hoặc đã bị di chuyển.</p>
+        <p>Vui lòng kiểm tra lại địa chỉ URL hoặc quay trở lại trang chủ.</p>
+        <a href="{{ url_for('route_index') }}">Về Trang Chủ</a>
+    </div>
+</body>
+</html>

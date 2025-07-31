@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Liên hệ - Thế giới điện thoại</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/topnav.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/taikhoan.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/lienhe.css') }}">
+    
+    <script src="{{ url_for('static', filename='js/dungchung.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/lienhe.js') }}"></script>
+
+</head>
+
+<body>
+    <script> addTopNav();</script>
+
+    <section style="min-height: 85vh">
+        <script> addHeader(); </script>
+
+        <div class="container">
+            <h2 class="lienhe-header">Liên Hệ Với Chúng Tôi</h2>
+            <div class="contact-section">
+                <h3>Thông Tin Chung Của Chúng Tôi</h3>
+                <div class="info-columns">
+                    <div class="info-left">
+                        <h4>CÔNG TY THẾ GIỚI DI ĐỘNG</h4>
+                        <p><b>Địa chỉ:</b> 20 Phúc Diễn, Cầu Giấy, Quận Bắc Từ Liêm, Hà Nội</p>
+                        <p><b>Telephone:</b> 0326373225</p>
+                        <p><b>Hotline:</b> 026565455 - CSKH: 028 9996 777</p>
+                        <p><b>Website:</b> <a href="https://github.com/thangbb2901" target="_blank">Github Project</a></p>
+                        <p><b>E-mail:</b> DoAn@gmail.com</p>
+                        <p><b>Mã số thuế:</b> 01 02 03 04 05</p>
+                        <p><b>Tài khoản ngân hàng:</b><br>
+                           <b>Số TK:</b> 060008086888 <br>
+                           <b>Tại Ngân hàng:</b> BIDV Chi nhánh Hà Nội</p>
+                        <p style="margin-top: 15px;"><em>Quý khách có thể gửi liên hệ tới chúng tôi bằng cách hoàn tất biểu mẫu dưới đây. Chúng tôi
+                            sẽ trả lời thư của quý khách, xin vui lòng khai báo đầy đủ. Hân hạnh phục vụ và chân thành
+                            cảm ơn sự quan tâm, đóng góp ý kiến đến Smartphone Store.</em></p>
+                    </div>
+                    <div class="info-right">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14894.541542568857!2d105.73220408715818!3d21.047270300000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313455c64cc485f9%3A0xa23bdf13259c1ddf!2zU2nDqnUgdGjhu4sgVGjhur8gR2nhu5tpIERpIMSQ4buZbmc!5e0!3m2!1svi!2s!4v1748345466494!5m2!1svi!2s"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-section">
+                <div class="guithongtin">
+                    <h3>Gửi Thông Tin Liên Lạc Cho Chúng Tôi</h3>
+                    <form name="formlh" onsubmit="return nguoidung()">
+                        <table cellspacing="0">
+                            <tr>
+                                <td colspan="2"><label for="ht">Họ và tên</label></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><input type="text" name="ht" id="ht" maxlength="40" placeholder="Nhập họ và tên của bạn"
+                                        autocomplete="off" required></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><label for="sdt">Điện thoại liên hệ</label></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><input type="text" name="sdt" id="sdt" maxlength="11" minlength="10" placeholder="Nhập số điện thoại"
+                                        required></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><label for="em">Địa chỉ Email</label></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><input type="email" name="em" id="em" placeholder="Nhập địa chỉ email" autocomplete="off"
+                                        required></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><label for="tde">Tiêu đề</label></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><input type="text" name="tde" id="tde" maxlength="100" placeholder="Nhập tiêu đề liên hệ"
+                                        required></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><label for="nd">Nội dung</label></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><textarea name="nd" id="nd" rows="5" maxlength="500" wrap="physical"
+                                        placeholder="Nhập nội dung bạn muốn gửi" required></textarea></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" style="padding-top: 10px;"><button type="submit">Gửi Thông Tin Liên Hệ</button></td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+            </div>
+
+            <div class="contact-section">
+                <div class="thongtinnhom">
+                    <h3>Thông Tin Thành Viên Nhóm</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Họ tên</th>
+                                <th>MSSV</th>
+                                <th>Giới tính</th>
+                                <th>Lớp</th>
+                                <th>Tỉ lệ công việc</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <script>
+                            var thongtin = [
+                                ["Nguyễn Văn Thắng", "2022604968", "Nam", "DTTTMT01", "50%"], // Ví dụ tỉ lệ
+                                ["Nguyễn Mạnh Quỳnh", "2022565440", "Nam", "DTTTMT01", "10%"],
+                                ["Lường Minh AnhAnh", "3117410072", "Nam", "DCT1173", "15%"],
+                                ["Lê Hồng QuânQuân", "3117410074", "Nam", "DCT1175", "25%"]
+                            ];
+                            for (var i = 0; i < thongtin.length; i++) {
+                                document.write(
+                                    `
+                                    <tr>
+                                        <td>` +
+                                    thongtin[i][0] + `</td>
+                                        <td>` +
+                                    thongtin[i][1] + `</td>
+                                        <td>` +
+                                    thongtin[i][2] + `</td>
+                                        <td>` +
+                                    thongtin[i][3] + `</td>
+                                        <td>` +
+                                    thongtin[i][4] +
+                                    `</td>
+                                    </tr>
+                                `
+                                );
+                            }
+                        </script>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+        addContainTaiKhoan();
+    </script>
+
+    <div class="footer">
+        <script>
+            addFooter();
+        </script>
+    </div>
+
+    <i class="fa fa-arrow-up" id="goto-top-page" onclick="gotoTop()"></i>
+
+</body>
+</html>

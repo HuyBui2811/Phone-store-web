@@ -1,0 +1,371 @@
+.companyMenu {
+	margin: 10px 0 30px; 
+}
+
+.companyMenu a {
+    border: 2px solid #fff;
+    height: 40px;
+    line-height: 40px;
+    transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    color: #fff;
+    background: linear-gradient(135deg, #d0d3df, #342e3a);
+    border-radius: 7px;
+    box-shadow: 0 4px 8px rgba(102, 126, 234, 0.4);
+    display: inline-flex;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.companyMenu a:hover {
+	border-color: #aaa;
+	transform: scale(1.1);
+	z-index: 20;
+	box-shadow: 0 8px 15px rgba(118, 75, 162, 0.7);
+	background: linear-gradient(135deg, #ff6a00, #ee0979);
+}
+
+.companyMenu a img{
+    max-height: 30px;
+    vertical-align: middle;
+    margin-top: -3px;
+    transition: transform 0.3s ease;
+}
+.companyMenu a:hover img {
+    transform: translateY(-3px) rotate(-5deg);
+}
+
+/* Dropdown From w3 */
+.dropbtn {
+    background-color: #424335;
+    color: white;
+    padding: 10px 14px;
+    font-size: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 5px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+
+    /* Thêm để căn chỉnh icon và text */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Hoặc flex-start nếu muốn icon mũi tên ở ngay sau text */
+    width: 170px; /* Điều chỉnh chiều rộng nếu cần */
+}
+
+.dropbtn-main-icon {
+    max-height: 20px; /* Kích thước icon chính */
+    margin-right: 8px; /* Khoảng cách với text */
+    /* Thêm các style khác nếu cần */
+}
+
+.dropbtn-text {
+    flex-grow: 1; /* Để text chiếm phần không gian còn lại */
+    text-align: left; /* Căn text sang trái nếu justify-content: space-between */
+}
+
+.dropbtn-arrow-icon {
+    max-height: 12px; /* Kích thước icon mũi tên */
+    transition: transform 0.3s ease;
+    margin-left: 8px; /* Khoảng cách với text nếu cần */
+}
+
+.dropdown:hover .dropbtn .dropbtn-arrow-icon {
+    transform: rotate(180deg); /* Xoay icon mũi tên khi hover */
+    /* Nếu bạn dùng 2 icon (mũi tên lên/xuống riêng), bạn sẽ ẩn/hiện chúng ở đây */
+}
+
+.dropdown {
+    position: relative;
+    margin: 10px 5px;
+}
+
+.dropdown-content {
+    z-index: 1;
+    position: absolute;
+    min-width: 170px; /* Nên bằng hoặc lớn hơn width của .dropbtn */
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, .95);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.25);
+    transform: rotateX(90deg);
+    transform-origin: top center; /* Đảm bảo xoay từ cạnh trên */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+    /* Thêm để tránh bị cắt bóng đổ */
+    top: calc(100% + 5px); /* Đặt dropdown content ngay dưới button, +5px là khoảng cách nhỏ */
+    left: 0;
+}
+
+.dropdown-content a {
+    color: #444;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    color: white;
+    background-color: #555;
+    box-shadow: 0 0 10px #555;
+}
+
+.dropdown:hover .dropdown-content {
+    transform: rotateX(0deg);
+    opacity: 1;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+    box-shadow: 0 0 15px #3e8e41;
+    transform: scale(1.05);
+}
+/* ============== End From W3 ============== */
+
+/* Filter by Name */
+.filterName {
+	margin: 15px auto;
+	text-align: center;
+	/* width: 195px; */
+}
+.filterName input {
+	padding: 0 15px;
+	/* width: calc(100% - 30px); 15px la padding left cua input */
+	height: 30px;
+	border: 2px solid #bbb;
+	border-radius: 10px;
+	font-size: 15px;
+	-webkit-transition-duration: .3s;
+     -o-transition-duration: .3s;
+        transition-duration: .3s;
+	transition-property: border-color, box-shadow;
+}
+.filterName input:focus {
+	border: 2px solid #ff6a00;
+	box-shadow: 0 0 8px #ff6a00;
+} 
+
+/* Choosed filter */
+.choosedFilter { 
+	margin: 10px auto; 
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	justify-content: center;
+}
+.choosedFilter i { 
+	transition: color 0.3s ease; 
+}
+.choosedFilter a:hover > h3 > i { 
+	color: #ff4d4d; 
+}
+.choosedFilter a {
+    font-size: 12px;
+    padding: 6px 12px;
+    color: #fff;
+    background: linear-gradient(135deg, #288ad6, #1e6f9a);
+    border-radius: 6px;
+    margin-right: 5px;
+    transition: background 0.3s ease;
+    font-weight: 600;
+}
+.choosedFilter a:hover {
+	background: linear-gradient(135deg, #ff4d4d, #d42323);
+	cursor: pointer;
+}
+
+/* Các khung sản phẩm */
+.contain-khungSanPham {
+	
+}
+
+.khungSanPham {
+	width: 100%;
+	margin: 50px 0;
+	border-radius: 10px;
+	border: 2px solid #ff4d00; 
+	box-sizing: border-box; /* dùng để width ko vượt ra ngoài khi có border */
+	transition: box-shadow 0.3s ease;
+	box-shadow: 0 4px 12px rgba(255, 77, 0, 0.4);
+	background: #fff9f4;
+}
+
+.khungSanPham:hover {
+	box-shadow: 0 8px 24px rgba(255, 77, 0, 0.7);
+}
+
+.khungSanPham h3.tenKhung {
+	line-height: 1.5em;
+	font-size: 1.75em;
+	text-align: center;
+	margin: 0 auto 15px;
+	border-radius: 1em;
+	color: #f1efed;
+	font-weight: 700;
+	transform: translateY(-0.3em);
+	text-shadow: 0 1px 5px rgba(255, 77, 0, 0.5);
+}
+
+.khungSanPham li {
+	list-style-type: none; 
+}
+
+/* Nút xem tất cả */
+.xemTatCa {
+	display: block;
+	font-weight: 700;
+	text-align: center;
+	margin: 0 auto;
+	padding: .65em 1.3em;
+	border-radius: 1em;
+	color: #ff4d00;
+	background-color: #fff4e6;
+	transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+	transform: translateY(1em);
+	box-shadow: 0 3px 10px rgba(255, 77, 0, 0.3);
+	cursor: pointer;
+}
+.xemTatCa:hover {
+	background-color: #ff4d00;
+	color: #fff;
+	transform: translateY(0) scale(1.05);
+	box-shadow: 0 8px 20px rgba(255, 77, 0, 0.7);
+}
+.top-products-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    padding: 10px 0 6px 0;
+}
+
+.top-product-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 1px 6px rgba(40,138,214,0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 120px;
+    padding: 10px 6px 8px 6px;
+    transition: box-shadow 0.2s, transform 0.2s;
+    position: relative;
+}
+
+.top-product-card:hover {
+    box-shadow: 0 4px 12px rgba(40,138,214,0.15);
+    transform: translateY(-2px) scale(1.03);
+}
+
+.top-product-img-wrap {
+    width: 60px;
+    height: 60px;
+    background: #f5f7fa;
+    border-radius: 7px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 6px;
+}
+
+.top-product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.2s;
+}
+
+.top-product-card:hover .top-product-img {
+    transform: scale(1.06);
+}
+
+.top-product-info {
+    text-align: center;
+    width: 100%;
+}
+
+.top-product-name {
+    font-weight: bold;
+    color: #288ad6;
+    font-size: 0.95em;
+    margin-bottom: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.top-product-sold {
+    color: #ff4d00;
+    font-size: 0.9em;
+    margin-bottom: 1px;
+}
+
+.top-product-price {
+    color: #1e6f9a;
+    font-weight: bold;
+    font-size: 0.98em;
+}
+
+/* Số thứ tự Top */
+/* nhom12/static/css/trangchu.css */
+
+/* ... (các mã CSS khác trong file được giữ nguyên) ... */
+
+/* Số thứ tự Top */
+.top-product-rank {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    background: linear-gradient(120deg,#ffb300 60%,#ff4e50 100%);
+    color: #fff;
+    font-weight: bold;
+    font-size: 0.95em;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 4px rgba(255,179,0,0.10);
+    z-index: 2;
+    border: 1.5px solid #fff;
+}
+/* === MÀU SẮC MỚI CHO TOP 1-10 === */
+.top-product-rank-1 { background: linear-gradient(120deg, #ffd700, #ff8c00); } /* Gold */
+.top-product-rank-2 { background: linear-gradient(120deg, #c0c0c0, #a9a9a9); } /* Silver */
+.top-product-rank-3 { background: linear-gradient(120deg, #cd7f32, #a0522d); } /* Bronze */
+.top-product-rank-4 { background: linear-gradient(120deg, #8e2de2, #4a00e0); } /* Purple */
+.top-product-rank-5 { background: linear-gradient(120deg, #00b09b, #96c93d); } /* Green */
+.top-product-rank-6 { background: linear-gradient(120deg, #00c9ff, #92fe9d); } /* Teal */
+.top-product-rank-7 { background: linear-gradient(120deg, #f7971e, #ffd200); } /* Pink/Orange */
+.top-product-rank-8 { background: linear-gradient(120deg, #2c3e50, #4ca1af); } /* Deep Blue */
+.top-product-rank-9 { background: linear-gradient(120deg, #ee0979, #ff6a00); } /* Magenta */
+.top-product-rank-10 { background: linear-gradient(120deg, #485563, #29323c); } /* Gray/Blue */
+
+/* ... (phần còn lại của file được giữ nguyên) ... */
+.top-product-link {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+}
+.top-product-link:hover .top-product-card {
+    box-shadow: 0 6px 18px rgba(40,138,214,0.18);
+    transform: translateY(-4px) scale(1.04);
+}
+/* File: nhom12/static/css/trangchu.css */
+
+/* Thêm vào cuối file */
+.khungSanPham:last-child .tenKhung {
+    background-image: linear-gradient(120deg, #6c757d 0%, #adb5bd 50%, #6c757d 100%) !important;
+}
+
+.khungSanPham:last-child {
+    border-color: #6c757d !important;
+}
+
+.khungSanPham:last-child .xemTatCa {
+    border-left: 2px solid #6c757d !important;
+    border-right: 2px solid #6c757d !important;
+}

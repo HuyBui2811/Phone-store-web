@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Trung Tâm Bảo Hành - Thế Giới Điện Thoại</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/topnav.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/taikhoan.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/baohanh.css') }}">
+    <script src="{{ url_for('static', filename='js/dungchung.js') }}"></script>
+</head>
+
+<body>
+    <script>addTopNav();</script>
+
+    <section class="warranty-page-container">
+        <script>addHeader();</script>
+
+        <div class="container">
+            <h1 class="page-title">Trung Tâm Bảo Hành Chính Hãng</h1>
+
+            <div class="warranty-intro">
+                <p>Chào mừng quý khách đến với trang thông tin bảo hành của Thế Giới Điện Thoại. Chúng tôi cam kết mang đến dịch vụ hậu mãi và hỗ trợ bảo hành tốt nhất cho tất cả sản phẩm.</p>
+                <p>Dưới đây là danh sách các trung tâm bảo hành ủy quyền và thông tin liên hệ để quý khách thuận tiện trong việc yêu cầu hỗ trợ.</p>
+            </div>
+
+            <div class="content-wrapper">
+                <div class="main-content">
+                    <section class="service-centers">
+                        <h2><i class="fa fa-wrench"></i> Danh Sách Trung Tâm Bảo Hành</h2>
+                        <div class="tabs">
+                            <button class="tab-button active" onclick="showCenters('gold', this)">Cao cấp (Diamond/Gold)</button>
+                            <button class="tab-button" onclick="showCenters('silver', this)">Phổ thông (Silver)</button>
+                        </div>
+                        <div id="dschinhanh" class="list-service-centers">
+                        </div>
+                    </section>
+
+                    <section class="warranty-contact-form-section">
+                        <h2><i class="fa fa-envelope"></i> Gửi Yêu Cầu Hỗ Trợ Bảo Hành</h2>
+                        <p>Nếu quý khách có bất kỳ thắc mắc hoặc yêu cầu hỗ trợ nào liên quan đến bảo hành, vui lòng điền vào biểu mẫu dưới đây. Chúng tôi sẽ phản hồi trong thời gian sớm nhất.</p>
+                        <form class="contact-form" name="formlh" onsubmit="return false;">
+                            <div class="form-group">
+                                <label for="ht">Họ và tên:</label>
+                                <input type="text" name="ht" id="ht" placeholder="Nguyễn Văn A" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="sdt">Điện thoại liên hệ:</label>
+                                <input type="tel" name="sdt" id="sdt" placeholder="09xxxxxxxx" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="em">Địa chỉ Email:</label>
+                                <input type="email" name="em" id="em" placeholder="email@example.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="tde">Sản phẩm cần bảo hành (Tên sản phẩm, Số IMEI/Serial):</label>
+                                <input type="text" name="tde" id="tde" placeholder="Ví dụ: iPhone 15 Pro - 1234567890ABC" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="nd">Mô tả chi tiết sự cố:</label>
+                                <textarea name="nd" id="nd" rows="5" placeholder="Mô tả rõ vấn đề bạn gặp phải với sản phẩm..." required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="submit-btn">Gửi Yêu Cầu</button>
+                            </div>
+                        </form>
+                    </section>
+                </div>
+
+                <aside class="sidebar-content">
+                    <section class="company-info-map">
+                        <h3><i class="fa fa-building"></i> Thông Tin Liên Hệ Công Ty</h3>
+                        <div class="ct">
+                            <h2 style="color: gray; font-size: 1.2em;"> CÔNG TY CỔ PHẦN H - GROUP </h2>
+                            <p><b>Địa chỉ:</b> 20 Phúc Diễn, Cầu Giấy, Quận Bắc Từ Liêm , Hà Nội</p>
+                            <p><b>Telephone:</b> 0326373225</p>
+                            <p><b>Hotline:</b> 026565455- CSKH: 028 9996 777</p>
+                            <p><b>Website:</b> <a href="https://github.com/HoangTran0410/DoAn_Web1">Github</a></p>
+                            <p><b>E-mail:</b> DoAn@gmail.com</p>
+                        </div>
+                        <div class="map-container">
+                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14894.541542568857!2d105.73220408715818!3d21.047270300000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313455c64cc485f9%3A0xa23bdf13259c1ddf!2zU2nDqnUgdGjhu4sgVGjhur8gR2nhu5tpIERpIMSQ4buZbmc!5e0!3m2!1svi!2s!4v1748345466494!5m2!1svi!2s"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                             </iframe>
+                        </div>
+                    </section>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <script>addContainTaiKhoan();</script>
+    <div class="footer">
+        <script>addFooter();</script>
+    </div>
+    <i class="fa fa-arrow-up" id="goto-top-page" onclick="gotoTop()"></i>
+
+    <script>
+        // Mock data if admin/dulieu.js is not available for testing
+        // Replace with your actual data structure from admin/dulieu.js
+        var obj_gold = [
+            { name: "TTBH Cao Cấp Quận Bắc Từ Liêm", address: "123 Đường Cầu Diễn, Quận Bắc Từ Liêm, Hà Nội", phone: "028 1111 2222", map: "https://maps.app.goo.gl/AZKqvTGMHUD1Fdpp7" },
+            { name: "TTBH Cao Cấp Quận Bắc Từ LiêmLiêm", address: "120 Tây Tựu, Quận Bắc Từ Liêm, Hà Nội", phone: "028 3333 4444", map: "https://maps.app.goo.gl/DguBC8LkDE5S69qLA" }
+        ];
+        var obj_silver = [
+            { name: "TTBH Phổ Thông Quận 10", address: "789 Đường C, P.14, Quận 10, TP.HCM", phone: "028 5555 6666", map: "https://maps.app.goo.gl/ub5hc1Yv6yhcnGo66" },
+            { name: "TTBH Phổ Thông Gò Vấp", address: "101 Đường D, P.5, Q.Gò Vấp, TP.HCM", phone: "028 7777 8888", map: "https://maps.app.goo.gl/V5maTiAkVjkqGaNz8" }
+        ];
+        // var obj_diamond = []; // Add if you have this category
+
+        function render(data, type) {
+            var s = "";
+            for (var i = 0; i < data.length; i++) {
+                s += `
+                    <div class="service-center-card">
+                        <h4>${data[i].name}</h4>
+                        <p><i class="fa fa-map-marker"></i> <strong>Địa chỉ:</strong> ${data[i].address}</p>
+                        <p><i class="fa fa-phone"></i> <strong>Điện thoại:</strong> ${data[i].phone}</p>
+                        ${data[i].map ? `<p><a href="${data[i].map}" target="_blank" class="map-link">Xem bản đồ <i class="fa fa-external-link"></i></a></p>` : ""}
+                    </div>
+                `;
+            }
+            document.getElementById("dschinhanh").innerHTML = s;
+        }
+
+        function showCenters(type, elm) {
+            if (type === 'gold') {
+                render(obj_gold, 'gold'); // Assuming obj_diamond is similar or combined with gold
+            } else if (type === 'silver') {
+                render(obj_silver, 'silver');
+            }
+            // Add more conditions for other types if necessary
+
+            var buttons = document.getElementsByClassName("tab-button");
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].classList.remove("active");
+            }
+            if(elm) { // Kiểm tra xem elm có tồn tại không
+                 elm.classList.add("active");
+            }
+        }
+
+        // Initial render
+        window.onload = function () {
+            // Your existing onload logic if any from dungchung.js (like khoiTao()) should be called
+            if (typeof khoiTao === "function") {
+                khoiTao(); // Assuming khoiTao handles search tags etc.
+                 var tags = ["Samsung", "iPhone", "Huawei", "Oppo", "Mobi"];
+            for (var t of tags) addTags(t, "index.html?search=" + t);
+            }
+            // Đảm bảo DOM đã tải xong trước khi querySelector
+            var defaultActiveButton = document.querySelector('.tab-button.active');
+            if (!defaultActiveButton && document.querySelector('.tab-button')) { // Nếu không có nút active mặc định, chọn nút đầu tiên
+                defaultActiveButton = document.querySelector('.tab-button');
+                if(defaultActiveButton) defaultActiveButton.classList.add('active');
+            }
+            if(defaultActiveButton) { // Chỉ gọi showCenters nếu có nút active
+                 showCenters('gold', defaultActiveButton); 
+            } else if (document.querySelector('.tab-button')) { // Fallback nếu không có active, nhưng có tab-button
+                 showCenters('gold', document.querySelector('.tab-button'));
+            }
+        };
+    </script>
+</body>
+</html>

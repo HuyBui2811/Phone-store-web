@@ -1,0 +1,458 @@
+/* Product Detail Page Styles - Improved Version */
+
+/* Product Title - Specific to avoid conflicts */
+.chitietSanpham h1 {
+    display: block;
+    margin: 0 0 0 10px;
+    float: left;
+    overflow: hidden;
+    font-size: 24px;
+    color: #333;
+    line-height: 40px;
+}
+
+/* Rating Section */
+.rating {
+    float: left;
+    margin-left: 15px;
+    line-height: 40px;
+}
+
+.fa-star,
+.fa-star-o {
+    color: #ff8c00;
+}
+
+/* Row Detail */
+.rowdetail {
+    display: block;
+    border-top: 1px solid #e5e5e5;
+    padding: 15px 0;
+    margin-top: 5px;
+    clear: both;
+}
+
+/* Image Overlay Modal */
+.overlaycertainimg {
+    z-index: 1000;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.95);
+    transform: scale(0);
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlaycertainimg.active {
+    transform: scale(1);
+}
+
+/* Close Button */
+.overlaycertainimg .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 2.5rem;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    color: #ccc;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 50%;
+}
+
+.overlaycertainimg .close:hover {
+    background-color: #e74c3c;
+    color: #fff;
+    transform: scale(1.1);
+}
+
+/* Overlay Content */
+.overlaycertainimg-content {
+    width: 90%;
+    max-width: 800px;
+    text-align: center;
+}
+
+.overlaycertainimg-content img {
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+.overlaycertainimg-content img.bigimg {
+    max-height: 70vh;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    object-fit: contain;
+}
+
+/* Small Images in Overlay */
+.overlaycertainimg-content .div_smallimg {
+    display: inline-block;
+    margin: 15px 5px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.overlaycertainimg-content .div_smallimg:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.overlaycertainimg-content .div_smallimg img {
+    width: 80px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+}
+
+.overlaycertainimg-content .div_smallimg img:hover {
+    transform: scale(1.05);
+}
+
+/* Product Image Section */
+.picture {
+    float: left;
+    width: 33%;
+    position: relative;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.picture img {
+    display: block;
+    height: auto;
+    margin: 0 auto;
+    cursor: pointer;
+    max-width: 100%;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.picture img:hover {
+    transform: scale(1.02);
+}
+
+/* Price and Sale Section */
+.price_sale {
+    float: left;
+    position: relative;
+    width: 33%;
+    display: block;
+}
+
+/* Price Area */
+.area_price {
+    display: block;
+    overflow: hidden;
+    line-height: 24px;
+    padding: 0 10px 15px;
+}
+
+.area_price strong {
+    display: inline-block;
+    overflow: hidden;
+    font-size: 28px;
+    color: #e74c3c;
+    vertical-align: middle;
+    margin-right: 10px;
+    font-weight: 700;
+}
+
+.area_price span {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 18px;
+    text-decoration: line-through;
+    margin-left: 8px;
+    color: #777;
+}
+
+/* Price Labels */
+.area_price label {
+    display: inline-block;
+    position: relative;
+    font-size: 11px;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 4px;
+    padding: 2px 8px;
+    height: 20px;
+    line-height: 16px;
+    margin-left: 5px;
+}
+
+.area_price label.tragop {
+    background: linear-gradient(135deg, #f39c12, #e67e22);
+}
+
+.area_price label.giamgia {
+    background: linear-gradient(135deg, #ff9c00, #e74c3c);
+}
+
+.area_price label.moiramat {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+}
+
+.area_price label.giareonline {
+    background: linear-gradient(135deg, #27ae60, #2ecc71);
+}
+
+/* Shipping Info */
+.ship {
+    background: linear-gradient(135deg, #ecf7ed, #d5eddb);
+    border-radius: 6px;
+    border: 1px solid #27ae60;
+    margin: 10px;
+    padding: 0 15px;
+    font-weight: 600;
+    line-height: 35px;
+    min-height: 35px;
+}
+
+.ship img {
+    width: 20px;
+    height: 20px;
+    margin: 7px 10px 0 0;
+    float: left;
+}
+
+.ship div {
+    border-left: 1px solid #27ae60;
+    display: block;
+    line-height: 35px;
+    padding-left: 15px;
+    margin-left: 35px;
+    color: #27ae60;
+    font-size: 14px;
+}
+
+/* Promotion Area */
+.area_promo {
+    border: 1px solid #ddd;
+    display: block;
+    overflow: hidden;
+    border-radius: 6px;
+    position: relative;
+    margin: 10px;
+    padding-bottom: 15px;
+    background: #fafafa;
+}
+
+.area_promo strong {
+    display: block;
+    overflow: hidden;
+    font-size: 16px;
+    padding: 15px;
+    text-transform: uppercase;
+    color: #2c3e50;
+    background: #ecf0f1;
+    margin-bottom: 10px;
+}
+
+.area_promo .promo {
+    display: block;
+    overflow: hidden;
+    font-size: 14px;
+    padding: 5px 15px 5px 40px;
+    line-height: 1.5;
+    color: #34495e;
+}
+
+.promo img {
+    width: 16px;
+    height: 16px;
+    float: left;
+    margin: 2px 0 0 -25px;
+}
+
+/* Order Area */
+.area_order {
+    display: block;
+    overflow: hidden;
+    margin: 15px 10px;
+}
+
+.area_order .buy_now {
+    display: block;
+    overflow: hidden;
+    padding: 12px 0;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: normal;
+    color: #fff;
+    text-align: center;
+    background: linear-gradient(135deg, #f39c12, #e67e22);
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3);
+}
+
+.area_order .buy_now:hover {
+    background: linear-gradient(135deg, #e67e22, #d35400);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(243, 156, 18, 0.4);
+}
+
+.area_order .buy_now p {
+    display: block;
+    font-size: 13px;
+    margin: 5px 0 0 0;
+    opacity: 0.9;
+}
+
+/* Policy Section */
+.policy {
+    display: block;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 15px 0 10px;
+    margin: 0 10px 15px;
+    background: #fafafa;
+}
+
+.policy div {
+    display: block;
+    overflow: hidden;
+    padding: 8px 15px;
+    font-size: 14px;
+    line-height: 22px;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.policy div:hover {
+    background-color: #f0f0f0;
+}
+
+.policy div img {
+    background: #fff;
+    display: block;
+    width: 22px;
+    height: 22px;
+    float: left;
+    margin: 0 10px 0 0;
+    border-radius: 3px;
+}
+
+.policy div p {
+    margin: 0 0 0 32px;
+    color: #3498db;
+}
+
+.policy div.last {
+    border-bottom: none;
+}
+
+/* Product Info Section */
+.info_product {
+    width: 33%;
+    border: 1px solid #ddd;
+    float: left;
+    border-radius: 6px;
+    display: block;
+    background: #fff;
+    margin-bottom: 20px;
+}
+
+.info_product h2 {
+    text-align: center;
+    font-size: 22px;
+    padding: 15px;
+    background: #34495e;
+    color: #fff;
+    margin: 0;
+    border-radius: 6px 6px 0 0;
+}
+
+/* Info List */
+.info {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    padding: 0 15px 10px;
+}
+
+.info li {
+    list-style: none;
+    display: table;
+    border-top: 1px solid #eee;
+    width: 100%;
+    padding: 8px 0;
+    transition: background-color 0.3s ease;
+}
+
+.info li:hover {
+    background-color: #f8f9fa;
+}
+
+.info li:first-child {
+    border-top: none;
+}
+
+.info li p {
+    clear: both;
+    float: left;
+    margin: 5px 0;
+    width: 40%;
+    color: #666;
+    font-weight: 500;
+}
+
+.info li div {
+    width: 60%;
+    float: left;
+    margin: 5px 0;
+    color: #333;
+    font-size: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .picture,
+    .price_sale,
+    .info_product {
+        width: 100%;
+        float: none;
+        margin-bottom: 20px;
+    }
+    
+    .chitietSanpham h1 {
+        font-size: 20px;
+        margin: 0;
+        text-align: center;
+    }
+    
+    .rating {
+        float: none;
+        text-align: center;
+        margin: 10px 0;
+    }
+    
+    .area_price strong {
+        font-size: 24px;
+    }
+    
+    .overlaycertainimg .close {
+        top: 10px;
+        right: 15px;
+        font-size: 2rem;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+    }
+}

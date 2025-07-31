@@ -1,0 +1,145 @@
+/* tuyendung.css - Phiên bản cải tiến */
+
+/* Reset cơ bản và font chữ (thường đã có trong style.css) */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.7; /* Tăng line-height cho dễ đọc */
+    color: #454545; /* Màu chữ chính đậm hơn một chút */
+    background-color: #f9f9f9; /* Màu nền trang nhẹ nhàng */
+}
+
+.body-tuyendung {
+    width: 95%;
+    max-width: 900px;
+    margin: 30px auto;
+    background-color: #fff;
+    padding: 28px 18px 32px 18px;
+    border-radius: 14px;
+    box-shadow: 0 6px 28px rgba(40,138,214,0.10);
+}
+
+.recruitment-page-header { /* Tiêu đề "Tuyển Dụng" lớn của trang */
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #288ad6;
+    text-align: center;
+}
+
+.recruitment-page-header h2 {
+    font-size: 2.2rem; /* Kích thước lớn cho tiêu đề trang */
+    color: #288ad6;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.job-title { /* Tiêu đề chính của vị trí tuyển dụng */
+    color: #22223b;
+    text-align: center;
+    font-size: 1.7rem; /* Kích thước lớn hơn */
+    font-weight: 700;
+    margin-bottom: 32px; /* Tăng khoảng cách dưới */
+    text-transform: uppercase; /* VIẾT HOA */
+    letter-spacing: 1px;
+}
+
+.section-title { /* Tiêu đề các mục 1, 2, 3... */
+    font-size: 1.18rem; /* Kích thước vừa phải */
+    color: #288ad6;
+    margin-top: 28px; /* Khoảng cách trên */
+    margin-bottom: 10px; /* Khoảng cách dưới */
+    padding-bottom: 4px;
+    border-bottom: 1px solid #e0e0e0; /* Viền dưới nhẹ */
+    font-weight: 600;
+}
+
+.details-list {
+    list-style-type: none; /* Bỏ dấu chấm đầu dòng mặc định */
+    padding-left: 0; /* Bỏ padding trái mặc định */
+    margin-bottom: 18px;
+}
+
+.details-list li {
+    padding-left: 28px; /* Tạo khoảng thụt đầu dòng tùy chỉnh */
+    position: relative;
+    margin-bottom: 9px; /* Khoảng cách giữa các dòng */
+    color: #444; /* Màu chữ cho nội dung list */
+    font-size: 1.04em;
+}
+
+/* Tạo dấu đầu dòng tùy chỉnh */
+.details-list li::before {
+    content: "\f058"; /* Icon check của Font Awesome (cần Font Awesome) */
+    /* Hoặc dùng content: "\2022"; cho dấu chấm tròn • */
+    font-family: FontAwesome; /* Nếu dùng Font Awesome */
+    position: absolute;
+    left: 0;
+    top: 2px;
+    color: #288ad6; /* Màu cho dấu đầu dòng */
+    font-size: 1em;
+}
+
+.highlight-info { /* Cho các thông tin cần nhấn mạnh (trước là ul li span) */
+    font-weight: 600; /* Chữ đậm */
+    color: #ff4d00; /* Màu đỏ cam cho nổi bật (hoặc màu khác tùy bạn) */
+}
+
+.contact-highlight { /* Cho thông tin liên hệ đặc biệt */
+    font-weight: 600;
+    color: #22223b; /* Màu đen/xám đậm */
+}
+
+.application-link {
+    display: inline-block; /* Để có thể style padding, margin */
+    background-color: #288ad6;
+    color: #fff !important; /* Màu chữ trắng, !important để ghi đè nếu có */
+    padding: 5px 14px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 6px;
+    transition: background 0.2s;
+    box-shadow: 0 2px 8px rgba(40,138,214,0.08);
+}
+
+.application-link:hover {
+    background: #ff4d00;
+    color: #fff !important;
+}
+
+@media (max-width: 600px) {
+    .body-tuyendung {
+        padding: 10px 2vw 18px 2vw;
+    }
+    .job-title, .recruitment-page-header h2 {
+        font-size: 1.2rem;
+    }
+    .section-title {
+        font-size: 1.05rem;
+    }
+}
+
+/* CSS cũ không cần thiết nữa */
+/*
+.tuyendung-header{ (đã thay bằng .recruitment-page-header)
+	height: 40px;
+	font-weight: bold;
+	line-height: 40px;
+	padding-left: 10px;
+	background: pink;
+}
+.tuyendung-info{ (đã thay bằng .job-details-container)
+	margin: 10px;
+}
+.tieude{ (đã thay bằng .job-title)
+	color: #0C9;
+	text-align: center;
+	font-size: 28px;
+}
+.tuyendung-noidung{ (đã thay bằng .details-list)
+	margin:10px 0 15px 25px;
+}
+ul li span{ (đã thay bằng .highlight-info)
+	font-weight: bold;
+	color: red;
+}
+*/

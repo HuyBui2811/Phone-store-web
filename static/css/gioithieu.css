@@ -1,0 +1,91 @@
+/* -- Existing styles -- */
+/* .page-gt {
+	width: 80%;
+	margin: 50px 0 150px 100px;
+}
+
+.page-header {
+	height: 40px;
+	background: pink;
+	line-height: 40px;
+	padding-left: 10px;
+}
+
+.page-info {
+	font-size: 15px;
+	margin-top: 20px;
+} */
+
+/* -- Suggested improvements and additions -- */
+body {
+    font-family: 'Arial', sans-serif; /* Sử dụng font chữ dễ đọc và phổ biến */
+    line-height: 1.6;
+    color: #333; /* Màu chữ chính tối hơn cho dễ đọc */
+}
+
+.page-gt {
+    width: 75%; /* Có thể điều chỉnh lại chiều rộng */
+    max-width: 900px; /* Giới hạn chiều rộng tối đa để dễ đọc hơn trên màn hình lớn */
+    margin: 40px auto 100px auto; /* Căn giữa và tăng khoảng cách */
+    padding: 30px;
+    background-color: #ffffff; /* Nền trắng cho khu vực nội dung */
+    border-radius: 8px; /* Bo góc nhẹ nhàng */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Đổ bóng tạo chiều sâu */
+    opacity: 0; /* Hiệu ứng xuất hiện */
+    transform: translateY(20px); /* Hiệu ứng xuất hiện */
+    animation: fadeInUp 0.8s ease-out forwards; /* Hiệu ứng xuất hiện */
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.page-header {
+    font-size: 28px; /* Tăng kích thước font cho tiêu đề */
+    font-weight: bold;
+    color: #2c3e50; /* Màu tiêu đề chuyên nghiệp hơn */
+    padding-bottom: 15px; /* Khoảng cách dưới tiêu đề */
+    margin-bottom: 25px; /* Khoảng cách với nội dung */
+    border-bottom: 2px solid #3498db; /* Đường gạch chân trang trí */
+    text-align: center; /* Căn giữa tiêu đề */
+    /* Bỏ background hồng đi nếu bạn muốn chuyên nghiệp hơn */
+    /* background: pink; */ /* Xóa hoặc thay đổi màu này */
+    /* height: auto; */ /* Để chiều cao tự động theo nội dung */
+    /* line-height: normal; */ /* Để line-height tự nhiên */
+    /* padding-left: 0; */ /* Bỏ padding-left nếu căn giữa */
+}
+
+.page-info {
+    font-size: 16px; /* Tăng nhẹ kích thước font chữ cho dễ đọc */
+    color: #555; /* Màu chữ nội dung dịu hơn */
+    text-align: justify; /* Căn đều hai bên cho văn bản dài */
+    margin-top: 0; /* Bỏ margin-top vì đã có ở page-header */
+}
+
+.page-info p {
+    margin-bottom: 1.2em; /* Khoảng cách giữa các đoạn văn */
+}
+
+.page-info strong {
+    color: #3498db; /* Màu nhấn cho các từ khóa quan trọng */
+}
+
+.page-info em {
+    color: #555;
+    font-style: italic;
+}
+
+/* Hiệu ứng cho các liên kết (nếu có trong phần giới thiệu) */
+.page-info a {
+    color: #3498db;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.page-info a:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}

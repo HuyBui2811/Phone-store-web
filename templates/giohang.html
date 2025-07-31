@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}" />
+
+    <title>Thế giới điện thoại</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/topnav.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/taikhoan.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/gioHang.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
+
+    <script src="{{ url_for('static', filename='js/classes.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/dungchung.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/giohang.js') }}"></script>
+</head>
+
+<body>
+    <script> addTopNav(); </script>
+
+    <section style="min-height: 85vh">
+        <script> addHeader(); </script>
+
+        <div class="container">
+            <h1 class="cart-title"><i class="fa fa-shopping-cart"></i> Giỏ Hàng Của Bạn</h1>
+            <div class="cart-content">
+                <table class="listSanPham">
+                    <thead>
+                        <tr>
+                            <th>STT</th>
+                            <th>Sản Phẩm</th>
+                            <th>Giá</th>
+                            <th>Số Lượng</th>
+                            <th>Thành Tiền</th>
+                            <th>Thời Gian</th>
+                            <th>Xóa</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cartItems"></tbody>
+                </table>
+
+                <div class="cart-actions">
+                    <div class="total-price">
+                        <strong>TỔNG TIỀN:</strong>
+                        <span id="totalPrice">0 ₫</span>
+                    </div>
+                    <div class="action-buttons">
+                        <button class="thanhtoan" onclick="showCheckoutForm()"><i class="fa fa-money"></i> Thanh Toán</button> <button class="xoaHet" onclick="xoaHet()"><i class="fa fa-trash-o"></i> Xóa Hết</button> </div>
+                </div>
+
+                <div id="checkoutForm" class="checkout-modal-overlay" style="display: none;"> 
+                    <div class="checkout-modal-content">
+                        <div class="form-header">
+                            <h2>Thông Tin Thanh Toán</h2>
+                            <span class="close-form" onclick="hideCheckoutForm()"><i class="fa fa-times"></i></span>
+                        </div>
+                        <form action="javascript:void(0)" onsubmit="event.preventDefault(); thanhToan(this, event);">
+                            <div class="form-section">
+                                <h3>Thông Tin Người Mua</h3>
+                                <div class="form-group">
+                                    <label for="fullName">Họ và Tên <span class="req">*</span></label>
+                                    <input type="text" id="fullName" name="fullName" required autocomplete="off">
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Số Điện Thoại <span class="req">*</span></label>
+                                    <input type="tel" id="phone" name="phone" required autocomplete="off">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email <span class="req">*</span></label>
+                                    <input type="email" id="email" name="email" required autocomplete="off">
+                                </div>
+                            </div>
+
+                            <div class="form-section">
+                                <h3>Nơi Nhận Hàng</h3>
+                                <div class="form-group">
+                                    <label for="address">Địa Chỉ Nhận Hàng <span class="req">*</span></label>
+                                    <textarea id="address" name="address" required></textarea>
+                                </div>
+                            </div>
+
+                            <div class="form-section">
+                                <h3>Phương Thức Thanh Toán</h3>
+                                <div class="form-group">
+                                    <label for="paymentMethod">Chọn Phương Thức <span class="req">*</span></label>
+                                    <select id="paymentMethod" name="paymentMethod" required onchange="hienThiChiTietThanhToan()">
+                                        <option value="cash">Thanh toán bằng tiền mặt (COD)</option>
+                                        <option value="card">Thanh toán bằng thẻ tín dụng</option>
+                                        <option value="transfer">Chuyển khoản ngân hàng</option>
+                                    </select>
+                                </div>
+
+                                <div id="qrPaymentDetails" class="payment-details" style="display: none; margin-top: 15px; text-align: center; padding: 15px; border: 1px solid #e0e0e0; border-radius: 5px; background-color: #f9f9f9;">
+                                    <p style="margin-bottom: 10px; font-weight: bold; color: #333;">Vui lòng quét mã QR dưới đây để thanh toán:</p>
+                                    <img src="{{ url_for('static', filename='img/QRPay.jpg') }}" alt="Mã QR Thanh Toán" style="width: 200px; height: 200px; border: 1px solid #ccc; margin-bottom:10px;">
+                                    <p style="font-size: 0.9em; color: #555;">
+                                        <strong>Nội dung chuyển khoản:</strong><br>
+                                        [Tên của bạn] - [Số điện thoại] - Thanh toan don hang [Mã đơn hàng]
+                                    </p>
+                                    <p style="font-size: 0.9em; color: #555; margin-top: 5px;">
+                                        <strong>Ngân hàng:</strong> [BIDV]<br>
+                                        <strong>Số tài khoản:</strong> [4921793786]<br>
+                                        <strong>Chủ tài khoản:</strong> [NGUYEN VAN THANG]
+                                    </p>
+                                </div>
+
+                                <div id="visaPaymentDetails" class="payment-details" style="display: none; margin-top: 15px; padding: 15px; border: 1px solid #e0e0e0; border-radius: 5px; background-color: #f9f9f9;">
+                                    <h4 style="margin-top: 0; color: #333; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 15px;">Thông tin thẻ tín dụng/ghi nợ</h4>
+                                    <div class="form-group">
+                                        <label for="cardNumber">Số thẻ <span class="req">*</span></label>
+                                        <input type="text" id="cardNumber" name="cardNumber" placeholder="XXXX XXXX XXXX XXXX" autocomplete="off">
+                                    </div>
+                                    <div class="form-group" style="display: flex; gap: 10px;">
+                                        <div style="flex: 1;">
+                                            <label for="expiryDate">Ngày hết hạn (MM/YY) <span class="req">*</span></label>
+                                            <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY" autocomplete="off">
+                                        </div>
+                                        <div style="flex: 1;">
+                                            <label for="cvv">CVV/CVC <span class="req">*</span></label>
+                                            <input type="text" id="cvv" name="cvv" placeholder="XXX" autocomplete="off" maxlength="4">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cardHolderName">Tên chủ thẻ <span class="req">*</span></label>
+                                        <input type="text" id="cardHolderName" name="cardHolderName" placeholder="NGUYEN VAN A" autocomplete="off" style="text-transform: uppercase;">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="confirm-btn"><i class="fa fa-check"></i> Xác Nhận Thanh Toán</button>
+                                <button type="button" class="cancel-btn" onclick="hideCheckoutForm()"><i class="fa fa-times"></i> Hủy</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+        </div>
+    </section> <script>
+        addContainTaiKhoan();
+    </script>
+
+    <div class="footer"><script>addFooter();</script></div>
+
+    <i class="fa fa-arrow-up" id="goto-top-page" onclick="gotoTop()"></i>
+    <script>
+        // Load giỏ hàng từ localStorage
+    </script>
+</body>
+</html>
