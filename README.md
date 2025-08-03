@@ -1,30 +1,44 @@
-Đề tài trang web bán điện thoại.
+Here is the English translation of your website project description:
 
-Giao diện thân thiện, dễ sử dụng, chức năng khá đầy đủ.
+---
 
-Chức năng **Cơ bản**:
+## Phone E-commerce Website
 
-- Trang chủ hiển thị đẹp, các sản phẩm được chia theo nhiều tiêu chí: top sản phẩm bán chạy nhất,nổi bật, mới, khuyến mãi, giá rẻ, .. 
-- Trang bảo hành, liên hê, tin túc,tuyển dụng hiển thị đẹp mắt dễ nhìn 
-- Tìm kiếm/lọc/sắp xếp sản phẩm theo hãng, giá, tên, khuyến mãi, đánh giá, số sao, ...
-- Đăng ký, đăng nhập, giỏ hàng, trang người dùng, lịch sử mua hàng.
-- Trang chi tiết sản phẩm, giao diện **gợi ý sản phẩm** tương tự.
+**User-friendly interface**, easy to use, and fairly full-featured.
 
-Chức năng **ADMIN**:
+### **Basic Features**:
 
-- **Thống kê** số lượng bán ra, doanh thu của từng hãng
-- Danh sách **sản phẩm**, tìm kiếm/lọc, thêm/sửa/xoá sản phẩm
-- Danh sách **đơn hàng**, tìm kiếm/lọc, chỉnh sửa/duyệt/huỷ đơn hàng
-- Danh sách **khách hàng**, tìm kiếm/lọc, chỉnh sửa/thêm/xoá/khoá khác hàng
-- Danh sách **banner**, thêm,xóa, chỉnh sửa bannerbanner
+* A beautiful **homepage** with products displayed under various categories: top-selling, featured, new arrivals, promotions, budget phones, etc.
+* Pages for **warranty**, **contact**, **news**, and **careers** are well-designed and easy to read.
+* **Search/filter/sort** products by brand, price, name, promotion, rating, stars, etc.
+* **User account features**: sign up, log in, shopping cart, user profile, and purchase history.
+* **Product detail page** includes a section for **recommended/similar products**.
 
-## Admin Account: 
-+ username: admin
-+ password: adadad
+---
+
+### **ADMIN Features**:
+
+* **Statistics**: track the number of units sold and revenue by brand.
+* **Product management**: list/search/filter products, add/edit/delete products.
+* **Order management**: list/search/filter orders, edit/approve/cancel orders.
+* **Customer management**: list/search/filter customers, edit/add/delete/lock customer accounts.
+* **Banner management**: add/delete/edit banners.
+
+---
+
+### **Admin Account**:
+
+* **Username**: admin
+* **Password**: adadad
+
+---
 
 ## Screenshots
 
-### Cơ bản
+### Basic Interface
+
+---
+
 
 Trang chủ
 ![Trang chủ](./static/screenshots/trangchu.png)
