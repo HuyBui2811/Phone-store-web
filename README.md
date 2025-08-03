@@ -36,64 +36,65 @@
 ---
 
 
-Trang chủ
+Homepage
 ![Trang chủ](./static/screenshots/trangchu.png)
 
-Sản phẩm trong trang chủ
+Products on Homepage
 ![Trang chủ](./static/screenshots/sanpham.png)
 
-Chi tiết sản phẩm
+Product Details
 ![Trang chủ](./static/screenshots/chitiet.png)
 
-Đăng nhập
+Login Page
 ![Trang chủ](./static/screenshots/dangnhap.png)
 
-Đăng ký
+Register Page
 ![Trang chủ](./static/screenshots/dangky.png)
 
-Trang người dùng cá nhân
+User Profile Page
 ![Trang chủ](./static/screenshots/nguoidung.png ) 
 
-Trang người dùng đơơn hàng
+User Order History Page
 ![Trang chủ](./static/screenshots/nguoidungdh.png )
 
-Giỏ hàng
+User Order History Page
 ![Trang chủ](./static/screenshots/giohang.png)
 
-Tìm kiếm/lọc/sắp xếp sản phẩm
+Search / Filter / Sort Products
 ![Trang chủ](./static/screenshots/loc.png)
 
-Tìm top sản phẩm bán chạy 
+Top-selling Products 
 ![Trang chủ](./static/screenshots/top.png)
 
-Trang liên hệ
+Contact Page
 ![Trang chủ](./static/screenshots/lienhe.png)
 
-Trang giới thiệu 
+About Us Page 
 ![Trang chủ](./static/screenshots/gioithieu.png)
 
-Trang tuyển dụng
+Careers Page
 ![Trang chủ](./static/screenshots/tuyendung.png)
 
-Trang tin tức 
+News Page 
 ![Trang chủ](./static/screenshots/tintuc.png)
 
-Trang bảo hành
+Warranty Page
 ![Trang chủ](./static/screenshots/baohanh.png)
 
 ### Admin
 
-Admin: Thống kê
+Admin: Statistics
 ![Trang chủ](./static/screenshots/thongkead.png)
 
-Admin: Sản phẩm
+Admin: Products
 ![Trang chủ](./static/screenshots/sanphamad.png)
 
-Admin: Đơn hàng
+Admin: Orders
+
 ![Trang chủ](./static/screenshots/donhang.png)
 
-Admin: Người dùng
+Admin: Users
 ![Trang chủ](./static/screenshots/khachhang.png)
 
-Admin: banner
+Admin: Banners
 ![Trang chủ](./static/screenshots/banner.png)
