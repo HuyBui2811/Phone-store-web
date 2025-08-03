@@ -1,7 +1,3 @@
-Here is the English translation of your website project description:
-
----
-
 ## Phone E-commerce Website
 
 **User-friendly interface**, easy to use, and fairly full-featured.
